@@ -5,11 +5,11 @@ void main(){
 FILE*Arquivo;
 
 char nome;
-int nota1;
-int nota2;
-int nota3;
-int nota4;
-int media;
+float nota1;
+float nota2;
+float nota3;
+float nota4;
+float media;
 
 Arquivo=fopen("Boletim.txt", "a");
 if(Arquivo == NULL){
@@ -22,27 +22,27 @@ printf("\n======BOLETIM======\n");
 printf("\nQual o nome do Aluno: ");
 scanf("%s", &nome);
 printf("\nNota da 1º avaliação: ");
-scanf("%d", &nota1);
+scanf("%f", &nota1);
 printf("\nNota da 2º avaliação: ");
-scanf("%d", &nota2);
+scanf("%f", &nota2);
 printf("\nNota da 3º avaliação: ");
-scanf("%d", &nota3);
+scanf("%f", &nota3);
 printf("\nNota da 4º avaliação: ");
-scanf("%d", &nota4);
+scanf("%f", &nota4);
 
 
 (media=nota1+nota2+nota3+nota4)/4;
 
 
-if(media >=70){
+if(media >=7.0){
     printf("APROVADO");
 }
-if(media ==50){
+if(media ==5.0){
     printf("RECUPERAÇÃO");
 
 
 }
-if(media <=50){
+if(media <=5.0){
 
 printf("REPROVADO");
 
@@ -54,12 +54,12 @@ printf("REPROVADO");
 printf("\n======BOLETIM======\n");
 
 printf("\nNome: %s", &nome);
-printf("\n1º Nota: %.1d | 2º Nota: %.1d | 3º Nota: %.1d | 4º Nota: %.1d ",nota1,nota2,nota3,nota4);
-printf("\nMédia final: %.1d", media);
+printf("\n1º Nota: %.1f | 2º Nota: %.1f | 3º Nota: %.1f | 4º Nota: %.1f ",nota1,nota2,nota3,nota4);
+printf("\nMédia final: %.1f", media);
 
 
 
-fprintf (Arquivo,"\nNOME:%s\n| 1º Nota: %.1d | 2º Nota: %.1d | 3º Nota: %.1d | 4º Nota: %.1d |\n Média final: %.1d ",nota1,nota2,nota3,nota4,media);
+fprintf (Arquivo,"\nNOME:%s\n| 1º Nota: %.1f | 2º Nota: %.1f | 3º Nota: %.1f | 4º Nota: %.1f |\n Média final: %.1f ",nota1,nota2,nota3,nota4,media);
 
 fclose(Arquivo);
 
